@@ -1,0 +1,26 @@
+@import "bourbon/settings/prefixer"
+@import "bourbon/addons/prefixer"
+@import "bourbon/css3/flex-box"
+
+.cols,
+.rows
+  @include display(flex)
+  @include box-direction(normal)
+  @include flex-wrap(nowrap)
+  @include justify-content(flex-start)
+  @include align-items(flex-start)
+  @include align-content(stretch)
+  @include box-align(start)
+
+.cols
+  @include flex-direction(row)
+
+.rows
+  @include flex-direction(column)
+
+.cols > *,
+.rows > *
+  @include display(flex)
+  @include flex(1 1 auto)
+  @include order(1)
+  @include align-self(stretch)
